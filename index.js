@@ -228,18 +228,21 @@ async function getHistoryOfToday() {
   }
 }
 // 定时器
-cron.schedule(
-  "0 9-19/1 * * *",
-  () => {
-    const currentHour = new Date().getHours();
-    if (currentHour >= 9 && currentHour <= 19) {
-      formatDataForFeishu().then((msg) => {
-        sendToFeishu(msg);
-      });
-    }
-  },
-  {
-    timezone: "Asia/Shanghai",
-  }
-);
+// cron.schedule(
+//   "0 9-19/1 * * *",
+//   () => {
+//     const currentHour = new Date().getHours();
+//     if (currentHour >= 9 && currentHour <= 19) {
+//       formatDataForFeishu().then((msg) => {
+//         sendToFeishu(msg);
+//       });
+//     }
+//   },
+//   {
+//     timezone: "Asia/Shanghai",
+//   }
+// );
+formatDataForFeishu().then((msg) => {
+  sendToFeishu(msg);
+});
 console.log("定时器已启动，每天9点到19点之间每小时执行一次任务。");
