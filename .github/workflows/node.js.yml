@@ -4,10 +4,8 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  schedule:
+    - cron: '0 1-11 * * *'  # 每天 1:00 到 11:00 UTC 每小时运行一次
   workflow_dispatch:
     
 env:
