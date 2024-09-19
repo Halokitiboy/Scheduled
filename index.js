@@ -2,22 +2,22 @@ require("dotenv").config();
 const cron = require("node-cron");
 const axios = require("axios");
 
-// 飞书 Webhook URL
-const FEISHU_WEBHOOK_URL = 'https://open.feishu.cn/open-apis/bot/v2/hook/78ada885-3fca-42d7-95a8-87e7a68a66f3';
-// 抖音热点API
-const DOUYIN_HOT_API = "https://tenapi.cn/v2/douyinhot";
-// 百度热点API
-const BAIDU_HOT_API = "https://tenapi.cn/v2/baiduhot";
-// 历史上的今天
-const HISTORY_API = "https://tenapi.cn/v2/history";
 // // 飞书 Webhook URL
-// const FEISHU_WEBHOOK_URL = process.env.FEISHU_WEBHOOK_URL;
+// const FEISHU_WEBHOOK_URL = 'https://open.feishu.cn/open-apis/bot/v2/hook/78ada885-3fca-42d7-95a8-87e7a68a66f3';
 // // 抖音热点API
-// const DOUYIN_HOT_API = process.env.DOUYIN_HOT_API;
+// const DOUYIN_HOT_API = "https://tenapi.cn/v2/douyinhot";
 // // 百度热点API
-// const BAIDU_HOT_API = process.env.BAIDU_HOT_API;
+// const BAIDU_HOT_API = "https://tenapi.cn/v2/baiduhot";
 // // 历史上的今天
-// const HISTORY_API = process.env.HISTORY_API;
+// const HISTORY_API = "https://tenapi.cn/v2/history";
+// 飞书 Webhook URL
+const FEISHU_WEBHOOK_URL = process.env.FEISHU_WEBHOOK_URL;
+// 抖音热点API
+const DOUYIN_HOT_API = process.env.DOUYIN_HOT_API;
+// 百度热点API
+const BAIDU_HOT_API = process.env.BAIDU_HOT_API;
+// 历史上的今天
+const HISTORY_API = process.env.HISTORY_API;
 async function formatDataForFeishu() {
   let msg1 = await getAndSendDouyinHot();
   let msg2 = await getAndSendBaiduHot();
