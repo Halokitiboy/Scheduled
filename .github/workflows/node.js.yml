@@ -12,9 +12,9 @@ on:
     
 env:
   FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
-  DOUYIN_HOT_API: ${{ vars.DOUYIN_HOT_API }}
-  BAIDU_HOT_API: ${{ vars.BAIDU_HOT_API }}
-  HISTORY_API: ${{ vars.HISTORY_API }}
+  DOUYIN_HOT_API: ${{ secrets.DOUYIN_HOT_API }}
+  BAIDU_HOT_API: ${{ secrets.BAIDU_HOT_API }}
+  HISTORY_API: ${{ secrets.HISTORY_API }}
 
 jobs:
   build:
